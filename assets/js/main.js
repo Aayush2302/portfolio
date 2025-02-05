@@ -105,3 +105,7 @@ sr.reveal(".project-img", { interval: 200 });
 
   window.addEventListener("load" , typewriter);
 
+
+
+
+  
