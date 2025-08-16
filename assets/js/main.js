@@ -91,7 +91,7 @@ sr.reveal(".project-img", { interval: 200 });
   }
 
 
-  var messageArr = ["MERN Developer", "Frontend Developer", "Backend Developer"];
+  var messageArr = ["AI/ML Enthusiast", "MERN Developer"];
   var textPosition = 0;
   var speed = 200;
 
@@ -105,7 +105,25 @@ sr.reveal(".project-img", { interval: 200 });
 
   window.addEventListener("load" , typewriter);
 
+// Select all carousels
+document.querySelectorAll(".carousel").forEach(carouselContainer => {
+  const carousel = carouselContainer.querySelector(".carousel-images");
+  const images = carouselContainer.querySelectorAll(".carousel-images img");
+  const prevBtn = carouselContainer.querySelector(".carousel-btn.prev");
+  const nextBtn = carouselContainer.querySelector(".carousel-btn.next");
 
+  let index = 0;
 
+  function showImage(i) {
+    index = (i + images.length) % images.length;
+    carousel.style.transform = `translateX(${-index * 100}%)`;
+  }
 
-  
+  nextBtn.addEventListener("click", () => showImage(index + 1));
+  prevBtn.addEventListener("click", () => showImage(index - 1));
+
+  // Auto-slide every 4 seconds
+  setInterval(() => {
+    showImage(index + 1);
+  }, 4000);
+});

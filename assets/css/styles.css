@@ -618,3 +618,48 @@ img.man-icons {
     right: 10%;
   }
 }
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* adjust as needed */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-images img {
+    width: 100%;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  .carousel-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
